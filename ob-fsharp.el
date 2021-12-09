@@ -45,7 +45,7 @@
     (unless (and (get-process name)
                  (process-live-p (get-process name)))
       (let ((process (with-current-buffer (get-buffer-create name)
-                       (start-process name name "fsharpi" "--nologo" "--readline-"))))
+                       (start-process name name "dotnet" "fsi" "--nologo" "--readline-"))))
         (sit-for 1)
         (set-process-filter process 'ob-fsharp--process-filter)))))
 
